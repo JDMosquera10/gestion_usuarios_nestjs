@@ -194,7 +194,18 @@ export class UsersService implements UserServiceInterface {
             email,
             'Verificación de cuenta',
             `Tu código de verificación es: ${verificationCode}`,
-            `<h1>Verificación de Cuenta</h1><p>Tu código de verificación es: <b>${verificationCode}</b></p>`
+            `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e9e9e9; border-radius: 5px;">
+          <h2 style="color: #333; text-align: center;">Verificación de cuenta</h2>
+          <p>Hola,</p>
+          <p>Gracias por registrarte. Para completar tu registro, por favor utiliza el siguiente código de verificación:</p>
+          <div style="background-color: #f5f5f5; padding: 15px; text-align: center; font-size: 24px; font-weight: bold; letter-spacing: 5px; margin: 20px 0;">
+            ${verificationCode}
+          </div>
+          <p>Este código expirará en 15 minutos.</p>
+          <p>Si no has solicitado este código, por favor ignora este correo.</p>
+          <p>Saludos,<br>El equipo de soporte</p>
+        </div>
+`
         );
     }
 

@@ -31,14 +31,14 @@ export class GlobalHelper {
         return await bcrypt.hash(code, saltOrRounds);
     }
 
-    async hashComparteBcrypt(code: string, codeToCampare: string): Promise<boolean> {
+    async hashComparteBcrypt(codeToCampare: string, code: string): Promise<boolean> {
         return await bcrypt.compare(code, codeToCampare);
     }
 
     async sendMail(to: string, subject: string, text: string, html?: string): Promise<void> {
         try {
             const info = await this.transporter.sendMail({
-                from: `"Mi App" <${process.env.EMAIL_USER}>`,
+                from: `"Mi App Gestion de usuarios" <${process.env.EMAIL_USER}>`,
                 to,
                 subject,
                 text,
